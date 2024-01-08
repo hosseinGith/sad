@@ -1,0 +1,254 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: vazir;
+  border: 0;
+}
+
+body {
+  background-color: rgb(240, 245, 247);
+}
+
+.container {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  gap: 30px;
+}
+header .urlPagesContainer {
+  display: none;
+  top: 5px;
+  background-color: #eee;
+}
+header section:first-child {
+  display: none;
+}
+header > section {
+  width: 100%;
+}
+header > section > div .contactUsHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header > section > div .contactUsHeader > div {
+  display: flex;
+  gap: 10px;
+}
+header > section > div .contactUsHeader > div a {
+  color: #000;
+}
+header > section .headerTool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header > section .headerTool .searchContainer {
+  display: none;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+  background-color: #dfdfdf;
+}
+header > section .headerTool .searchContainer select {
+  min-width: 100px;
+  background-color: transparent;
+}
+header > section .headerTool .searchContainer input {
+  width: 100%;
+  outline: 0;
+  background-color: transparent;
+}
+header > section .headerTool .searchContainer button {
+  font-size: 20px;
+  padding: 7px;
+  background-color: transparent;
+  color: #5a5a5a;
+}
+header > section .headerTool .loginSingUp {
+  display: flex;
+  gap: 10px;
+}
+header > section .headerTool .loginSingUp > button,
+header > section .headerTool .loginSingUp a {
+  font-size: 20px;
+  color: #000;
+  background-color: #cccccc;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+header > section .headerTool .loginSingUp .loginSingUpContent {
+  display: none;
+}
+header > section .urlPages {
+  position: relative;
+  display: flex;
+  transition: all 0.3s;
+  justify-content: space-between;
+}
+header > section .urlPages .opacitySections {
+  position: fixed;
+  display: none;
+}
+header > section .urlPages ul {
+  display: flex;
+}
+header > section .urlPages ul li a {
+  width: 100%;
+  padding: 5px 20px;
+  display: inline-block;
+}
+header > section .urlPages ul li .urlPagesContent {
+  z-index: 8;
+  width: 100%;
+  min-height: 400px;
+  display: none;
+  right: 0;
+  position: absolute;
+  background-color: red;
+}
+header > section .urlPages ul li .urlPagesContent.hideWithAnimate {
+  display: block;
+  animation: hideContentUrlPages 0.5s linear;
+}
+@keyframes hideContentUrlPages {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+header > section .urlPages ul li:hover .urlPagesContent {
+  display: block;
+  animation: showContentUrlPages 0.5s linear;
+}
+@keyframes showContentUrlPages {
+  0% {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+header > section .urlPages .leftContent {
+  display: flex;
+  gap: 20px;
+}
+header > section .urlPages .leftContent a {
+  font-size: 30px;
+  position: relative;
+  color: #000;
+}
+header > section .urlPages .leftContent a span {
+  display: inline-flex;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a8e8e;
+  position: absolute;
+  z-index: 2;
+  padding: 5px;
+  font-size: 12px;
+  right: 0px;
+  bottom: 10px;
+  color: #fff;
+}
+header .urlPagesContainer.active {
+  top: 0;
+  width: 100%;
+  position: fixed;
+}
+
+main section > div .firstSectionContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main section > div .firstSectionContent .sliderContainer {
+  flex-basis: 60%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+main section > div .firstSectionContent .sliderContainer .rightSlider {
+  direction: ltr;
+  overflow: hidden;
+  box-shadow: 0 0 10px #000;
+  border-radius: inherit;
+}
+main section > div .firstSectionContent .sliderContainer .rightSlider .item {
+  width: 100%;
+}
+main section > div .firstSectionContent .sliderContainer .rightSlider .item a {
+  width: 100%;
+}
+main section > div .firstSectionContent .sliderContainer .rightSlider .item a img {
+  width: 100%;
+}
+main section > div .firstSectionContent .leftSlider {
+  flex-basis: 30%;
+  background-color: red;
+}
+
+@media screen and (min-width: 1100px) {
+  header .urlPagesContainer {
+    display: block;
+  }
+  header section:first-child {
+    display: block;
+  }
+  header section > div .headerTool .searchContainer {
+    display: flex;
+  }
+  header section > div .headerTool .loginSingUp > button,
+  header section > div .headerTool .loginSingUp a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+  }
+  header section > div .headerTool .loginSingUp > button i,
+  header section > div .headerTool .loginSingUp a i {
+    font-size: 16px;
+  }
+  header section > div .headerTool .loginSingUp > button .loginSingUpContent,
+  header section > div .headerTool .loginSingUp a .loginSingUpContent {
+    display: block;
+    font-size: 16px;
+  }
+  header section > div .headerTool .loginSingUp button {
+    border: 2px solid #09cf55;
+    color: #09cf55;
+    background-color: transparent;
+  }
+  header section > div .headerTool .loginSingUp button i {
+    color: #000;
+  }
+  header section > div .headerTool .loginSingUp a {
+    background-color: #0da748;
+    color: #fff;
+  }
+  main section div .firstSectionContent {
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
